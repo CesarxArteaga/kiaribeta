@@ -16,5 +16,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void open(View view) {
         startActivity(new Intent(this, Informacion.class));
+
     }
 }

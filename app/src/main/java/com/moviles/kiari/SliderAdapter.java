@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -18,6 +19,11 @@ public class SliderAdapter extends PagerAdapter {
       "Recuerda que esta apliacion no remplaza la consulta médica",
       "Los videos multimedia ayudan en el tratamiento del paciente con accidente cardiovascular",
       "Solo se debe realizar los ejercicios sugeridos por el profesional a cargo"
+    };
+    public int[] slides_images ={
+            R.drawable.icon1,
+            R.drawable.icon2,
+            R.drawable.icon3
     };
 
     public SliderAdapter(Context context){
@@ -41,8 +47,12 @@ public class SliderAdapter extends PagerAdapter {
         layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.layoutcontent, container, false);
 
-        TextView txtv = (TextView) view.findViewById(R.id.txtSlide);
-        txtv.setText(slides_descripction[position]);
+        TextView txtSlide = (TextView) view.findViewById(R.id.txtSlide);
+        ImageView imgSlide = (ImageView) view.findViewById(R.id.imgSlide);
+
+
+        imgSlide.setImageResource(slides_images[position]);
+        txtSlide.setText(slides_descripction[position]);
 
         container.addView(view);
 
