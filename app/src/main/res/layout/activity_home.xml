@@ -1,54 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible"></androidx.appcompat.widget.Toolbar>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="1dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        tools:layout_editor_absoluteX="1dp">
 
-        <ImageView
-            android:layout_width="250dp"
-            android:layout_height="100dp"
+        <include layout="@layout/navbar_home"></include>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="120dp"
             android:layout_marginTop="20dp"
-            android:background="@color/colorPrimaryDark"></ImageView>
+            android:background="@color/colorPrimaryDark"
+            android:text="TERAPÍAS"
+            android:textColor="@color/white"
+            android:textSize="10pt"></Button>
 
-        <ImageView
-            android:layout_width="250dp"
-            android:layout_height="100dp"
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="120dp"
             android:layout_marginTop="20dp"
-            android:background="@color/colorPrimaryDark"></ImageView>
+            android:background="@color/colorPrimaryDark"
+            android:text="HISTORIAS"
+            android:textColor="@color/white"
+            android:textSize="10pt"></Button>
 
-        <ImageView
-            android:layout_width="250dp"
-            android:layout_height="100dp"
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="120dp"
             android:layout_marginTop="20dp"
-            android:background="@color/colorPrimaryDark"></ImageView>
-
-
+            android:background="@color/colorPrimaryDark"
+            android:text="TERAPISTAS"
+            android:textColor="@color/white"
+            android:textSize="10pt"></Button>
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
