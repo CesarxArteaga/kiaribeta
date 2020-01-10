@@ -24,7 +24,8 @@
             android:background="@color/colorPrimaryDark"
             android:text="TERAPÍAS"
             android:textColor="@color/white"
-            android:textSize="10pt"></Button>
+            android:textSize="10pt"
+            android:onClick="goTerapia"></Button>
 
         <Button
             android:layout_width="200dp"

@@ -4,10 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
 
 
 public class Home extends AppCompatActivity {
@@ -27,5 +28,9 @@ public class Home extends AppCompatActivity {
         MenuInflater menu_options = getMenuInflater();
         menu_options.inflate(R.menu.menu_options,menu);
         return true;
+    }
+
+    public void goTerapia(View view) {
+        startActivity(new Intent(this,Terapia.class));
     }
 }
