@@ -20,14 +20,13 @@ public class Informacion extends AppCompatActivity {
     private TextView[] dots;
     private Button btnSiguiente;
     private int dotActual;
-    private int paginaActual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_informacion);
 
-        final ViewPager vp = (ViewPager)findViewById(R.id.vp);
+        ViewPager vp = (ViewPager)findViewById(R.id.vp);
         lineardots = (LinearLayout)findViewById(R.id.dotslayout);
 
         slideadap = new SliderAdapter(this);
@@ -37,15 +36,6 @@ public class Informacion extends AppCompatActivity {
         vp.setAdapter(slideadap);
         addDots(0);
         vp.addOnPageChangeListener(dotsChange);
-
-        btnSiguiente.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                vp.setCurrentItem(paginaActual+1);
-            }
-        });
-
-
     }
 
     public void addDots(int position){
@@ -74,16 +64,12 @@ public class Informacion extends AppCompatActivity {
         public void onPageSelected(int position) {
                 addDots(position);
                 dotActual = position;
-                if(dotActual==0){
+                if(dotActual==2){
                     btnSiguiente.setEnabled(true);
                     btnSiguiente.setVisibility(View.VISIBLE);
-                    }else if(position==dots.length -1){
-                    btnSiguiente.setText("Aceptar");
-//                    btnSiguiente.setEnabled(false);
-                    btnSiguiente.setVisibility(View.VISIBLE);
-                }else{
-                    btnSiguiente.setText("Continuar");
-                    btnSiguiente.setVisibility(View.VISIBLE);
+            }else {
+                    btnSiguiente.setEnabled(false);
+                    btnSiguiente.setVisibility(View.INVISIBLE);
                 }
         }
 
