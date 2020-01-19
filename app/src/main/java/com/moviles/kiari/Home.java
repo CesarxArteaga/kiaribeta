@@ -21,6 +21,9 @@ public class Home extends AppCompatActivity {
 
         Toolbar navbar_home = findViewById(R.id.nav_home);
         setSupportActionBar(navbar_home);
+        //navbar_home.setLogo(R.drawable.logo_navbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
     }
 
     @Override

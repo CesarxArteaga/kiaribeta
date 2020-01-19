@@ -19,31 +19,40 @@
 
         <Button
             android:layout_width="200dp"
-            android:layout_height="120dp"
+            android:layout_height="140dp"
             android:layout_marginTop="20dp"
-            android:background="@color/colorPrimaryDark"
-            android:text="TERAPÍAS"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@drawable/home_button_rounded"
+            android:drawableTop="@drawable/icon_terapia"
+            android:text="TERAPIAS"
             android:textColor="@color/white"
-            android:textSize="10pt"
+            android:textSize="9pt"
             android:onClick="goTerapia"></Button>
 
         <Button
             android:layout_width="200dp"
-            android:layout_height="120dp"
+            android:layout_height="140dp"
             android:layout_marginTop="20dp"
-            android:background="@color/colorPrimaryDark"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@drawable/home_button_rounded"
+            android:drawableTop="@drawable/icon_historias"
             android:text="HISTORIAS"
             android:textColor="@color/white"
-            android:textSize="10pt"></Button>
+            android:textSize="9pt"></Button>
 
         <Button
             android:layout_width="200dp"
-            android:layout_height="120dp"
+            android:layout_height="140dp"
             android:layout_marginTop="20dp"
-            android:background="@color/colorPrimaryDark"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:background="@drawable/home_button_rounded"
+            android:drawableTop="@drawable/icon_terapistas"
             android:text="TERAPISTAS"
             android:textColor="@color/white"
-            android:textSize="10pt"></Button>
+            android:textSize="9pt"></Button>
     </LinearLayout>
 
 </RelativeLayout>
