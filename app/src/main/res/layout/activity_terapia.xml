@@ -17,6 +17,7 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/layout_brazo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/gray_light"
@@ -53,6 +54,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/layout_pierna"
             android:background="@color/gray_light"
             android:layout_marginBottom="5dp"
             android:paddingTop="15dp"
@@ -87,6 +89,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/layout_cuello"
             android:background="@color/gray_light"
             android:layout_marginBottom="5dp"
             android:paddingTop="15dp"
@@ -122,6 +125,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/layout_sentarse"
             android:background="@color/gray_light"
             android:layout_marginBottom="5dp"
             android:paddingTop="15dp"
@@ -156,6 +160,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/layout_mano"
             android:background="@color/gray_light"
             android:layout_marginBottom="5dp"
             android:paddingTop="15dp"
@@ -190,6 +195,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/layout_caminar"
             android:background="@color/gray_light"
             android:layout_marginBottom="5dp"
             android:paddingTop="15dp"
