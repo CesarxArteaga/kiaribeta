@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class Preguntas extends AppCompatActivity {
@@ -35,8 +36,18 @@ public class Preguntas extends AppCompatActivity {
         vp_preguntas = (ViewPager)findViewById(R.id.vp_preguntas);
         slideadap_preguntas = new Preguntas_Adapter(this);
         vp_preguntas.setAdapter(slideadap_preguntas);
-
+        vp_preguntas.beginFakeDrag();
 
 
     }
+
+    public void Pass(View view) {
+            if(vp_preguntas.getCurrentItem()<2){
+                vp_preguntas.setCurrentItem(vp_preguntas.getCurrentItem()+1);
+            }
+    }
+
+
+
+
 }
