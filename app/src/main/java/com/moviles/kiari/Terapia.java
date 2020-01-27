@@ -16,7 +16,7 @@ public class Terapia extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terapia);
-        getSupportActionBar().setTitle("Terapia");
+        getSupportActionBar().setTitle("TERAPIAS");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         layouts_select[0] = (LinearLayout)findViewById(R.id.layout_brazo);
@@ -43,7 +43,7 @@ public class Terapia extends AppCompatActivity {
     public void click(int id){
         //Toast t = Toast.makeText(this,"Works",Toast.LENGTH_SHORT);
         //t.show();
-        Intent mIntent = new Intent(this,Preguntas.class);
+        Intent mIntent = new Intent(this,InfoTerapia.class);
         mIntent.putExtra("id_opc_select",id);
         startActivity(mIntent);
 

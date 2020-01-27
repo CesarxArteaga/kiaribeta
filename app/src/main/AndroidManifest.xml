@@ -9,10 +9,13 @@
         android:roundIcon="@mipmap/logo_app_kiari_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Preguntas"
+        <activity android:name=".InfoTerapia"
             android:parentActivityName=".Terapia"
-            android:theme="@style/AppTheme2"
-            ></activity>
+            android:theme="@style/AppTheme2"></activity>
+        <activity
+            android:name=".Preguntas"
+            android:parentActivityName=".Terapia"
+            android:theme="@style/AppTheme2" />
         <activity
             android:name=".Terapia"
             android:parentActivityName=".Home"
