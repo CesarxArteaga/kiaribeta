@@ -1,41 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
     android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".MainActivity"
-    android:background="@drawable/background_gradient">
+    tools:context=".MainActivity">
 
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="220dp"
+        android:layout_width="188dp"
         android:layout_height="220dp"
-        android:src="@drawable/logo2">
-    </ImageView>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="77dp"
+        android:layout_marginLeft="77dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginRight="55dp"
+        android:src="@drawable/logo2"></ImageView>
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="140dp"
         android:layout_height="82dp"
         android:layout_above="@+id/textView"
-        android:src="@drawable/logo3">
-    </ImageView>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="93dp"
+        android:layout_marginLeft="93dp"
+        android:layout_marginEnd="87dp"
+        android:layout_marginRight="87dp"
+        android:layout_marginBottom="33dp"
+        android:src="@drawable/logo3"></ImageView>
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="241dp"
         android:layout_height="56dp"
+        android:layout_above="@+id/button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginBottom="23dp"
         android:gravity="center"
         android:text="Tratamiento de pacientes con Accidentes Cardiovasculares"
         android:textColor="@color/white"
         android:textSize="6pt"></TextView>
+
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="98dp"
+        android:layout_marginLeft="98dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginRight="92dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/button_background"
         android:onClick="open"
         android:paddingLeft="25dp"
@@ -45,4 +81,4 @@
         android:text="Continuar"></Button>
 
 
-</LinearLayout >
+</RelativeLayout>
