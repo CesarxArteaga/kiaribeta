@@ -2,11 +2,17 @@ package com.moviles.kiari;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import com.moviles.kiari.data.DataBasaHelper;
 
 public class Terapia extends AppCompatActivity {
 
@@ -15,6 +21,7 @@ public class Terapia extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_terapia);
         getSupportActionBar().setTitle("TERAPIAS");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -38,6 +45,16 @@ public class Terapia extends AppCompatActivity {
             });
         }
 
+
+
+        /*if(isNetworkAvailable()){
+            Toast t = Toast.makeText(this,"Conectado",Toast.LENGTH_LONG);
+            t.show();
+        }else {
+            Toast t = Toast.makeText(this,"Sin internet",Toast.LENGTH_LONG);
+            t.show();
+        }*/
+
     }
 
     public void click(int id){
@@ -48,5 +65,9 @@ public class Terapia extends AppCompatActivity {
         startActivity(mIntent);
 
     }
+
+
+
+
 
 }

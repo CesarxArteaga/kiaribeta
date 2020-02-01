@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
     android:gravity="center_horizontal"
+    android:configChanges="orientation"
+    android:screenOrientation="portrait"
     android:orientation="vertical">
 
 
