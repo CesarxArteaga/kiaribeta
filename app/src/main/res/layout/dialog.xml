@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="280dp"
+    android:gravity="center_horizontal"
+    android:layout_height="wrap_content" android:background="@drawable/button_background">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Necesitas Ayuda?"
+        android:textSize="12pt"
+        android:textStyle="bold"
+        android:padding="10dp"></TextView>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_terapia_mano"></ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="9pt"
+        android:textAlignment="center"
+        android:text="Para ayuda general puedes contactarte con los desarrolladores"
+></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="9pt"
+        android:text="Escribemos un email a: kiari@info.com"
+        ></TextView>
+
+
+</LinearLayout>

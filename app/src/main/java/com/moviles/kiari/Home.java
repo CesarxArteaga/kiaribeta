@@ -1,22 +1,30 @@
 package com.moviles.kiari;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 
+import android.app.Dialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -35,6 +43,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
@@ -42,6 +51,14 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
     RequestQueue dataQueue;
     List itemIds;
 
+    private SensorManager mSensorManager;
+    private float mAccel;
+    private float mAccelCurrent;
+    private float mAccelLast;
+
+
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +71,14 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        Objects.requireNonNull(mSensorManager).registerListener(mSensorListener, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                SensorManager.SENSOR_DELAY_NORMAL);
+        mAccel = 10f;
+        mAccelCurrent = SensorManager.GRAVITY_EARTH;
+        mAccelLast = SensorManager.GRAVITY_EARTH;
+
+
 
         Button botonTerapia  = findViewById(R.id.botonTerapias);
         Button botonHistorias  = findViewById(R.id.botonHistorias);
@@ -64,28 +89,19 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         botonHistorias.setOnClickListener(this);
         botonTerapistas.setOnClickListener(this);
 
-        //creardb();
 
         itemIds = new ArrayList<>();
         comprobarTabla();
 
         if(itemIds.size()<1){
-            //Toast t = Toast.makeText(this,"SI HAY DATOS",Toast.LENGTH_LONG);
-            //t.show();
             if(isInternetConnection()){
                 asy a = new asy();
                 a.execute();
             }
         }
 
-/*
-        if(isInternetConnection()){
-            asy a = new asy();
-            a.execute();
-        }*/
-
-
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -197,6 +213,54 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         }
 
     }
+
+
+    private final SensorEventListener mSensorListener = new SensorEventListener() {
+        @Override
+        public void onSensorChanged(SensorEvent event) {
+            float x = event.values[0];
+            float y = event.values[1];
+            float z = event.values[2];
+            mAccelLast = mAccelCurrent;
+            mAccelCurrent = (float) Math.sqrt((double) (x * x + y * y + z * z));
+            float delta = mAccelCurrent - mAccelLast;
+            mAccel = mAccel * 0.9f + delta;
+            if (mAccel > 24) {
+
+                showDialoggg();
+
+
+            }
+
+        }
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        }
+    };
+
+    private void showDialoggg() {
+
+        final Dialog dialog = new Dialog(Home.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.dialog);
+
+            dialog.show();
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        mSensorManager.registerListener(mSensorListener, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                SensorManager.SENSOR_DELAY_NORMAL);
+        super.onResume();
+    }
+    @Override
+    protected void onPause() {
+        mSensorManager.unregisterListener(mSensorListener);
+        super.onPause();
+    }
+
 
 
 }
